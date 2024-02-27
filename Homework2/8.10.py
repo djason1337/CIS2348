@@ -3,8 +3,10 @@
 word = input()
 no_spaces = word.replace(' ', '')
 
-def reverseword(no_spaces):
-    return no_spaces[::-1]
+
+def reverseword(word_no_spaces):
+    return word_no_spaces[::-1]
+
 
 word2 = reverseword(no_spaces)
 
