@@ -9,7 +9,6 @@ current_date_month = int(current_date.strftime("%m"))
 current_date_day = int(current_date.strftime("%d"))
 
 
-user_date = input()
 dates_start = []
 dates_end = []
 months = ["January", "February", "March", "April", "May", "June",
@@ -31,9 +30,11 @@ month_numbers = {
 }
 
 # Read dates from input and stop when -1 is inputted
-while user_date != '-1':
-    dates_start.append(user_date)
-    user_date = input()
+with open(input(), 'r')as file:
+    for line in file:
+        dates = line.strip()
+        if '-1' not in dates:
+            dates_start.append(dates)
 
 
 # Check if dates include valid month(case insensitive) and 1 comma only, making sure that there is a digit before comma
