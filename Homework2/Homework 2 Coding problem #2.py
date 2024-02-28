@@ -55,7 +55,9 @@ for date in dates_start:
                     if number.isdigit():
                         dates_end.append(date)
 
-# Use find() to parse month day and year, check to make sure no future date is accepted, replace print with file.write for .txt output
+# Use find() to parse month day and year, check to make sure no future date is accepted,
+# replace print with file.write for .txt output
+
 for date in dates_end:
     comma = date.find(',')
     space = date.find(' ')
