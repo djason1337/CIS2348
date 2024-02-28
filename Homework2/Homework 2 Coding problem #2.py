@@ -29,8 +29,8 @@ month_numbers = {
   "December": 12, "december": 12
 }
 
-# Read dates from input and stop when -1 is inputted
-with open(input(), 'r')as file:
+# Read dates from file and stop when -1 is found
+with open('inputDates.txt', 'r')as file:
     for line in file:
         dates = line.strip()
         if '-1' not in dates:
@@ -55,7 +55,7 @@ for date in dates_start:
                     if number.isdigit():
                         dates_end.append(date)
 
-# Use find() to parse month day and year, check to make sure no future date is accepted
+# Use find() to parse month day and year, check to make sure no future date is accepted, replace print with file.write for .txt output
 for date in dates_end:
     comma = date.find(',')
     space = date.find(' ')
@@ -68,11 +68,14 @@ for date in dates_end:
     if int_year == current_date_year:
         if month_number == current_date_month:
             if int_day <= current_date_day:
-                print(f'{month_numbers[month]}/{day}/{year}')
+                with open('parsedDates.txt', 'a') as file:
+                    file.write(f'{month_numbers[month]}/{day}/{year}\n')
     else:
         if int_year == current_date_year:
             if month_number < current_date_month:
-                print(f'{month_numbers[month]}/{day}/{year}')
+                with open('parsedDates.txt', 'a') as file:
+                    file.write(f'{month_numbers[month]}/{day}/{year}\n')
         else:
             if int_year < current_date_year:
-                print(f'{month_numbers[month]}/{day}/{year}')
+                with open('parsedDates.txt', 'a') as file:
+                    file.write(f'{month_numbers[month]}/{day}/{year}\n')
