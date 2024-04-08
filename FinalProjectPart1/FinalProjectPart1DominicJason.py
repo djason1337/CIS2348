@@ -71,7 +71,7 @@ def full_roster():
             csv.writer(file).writerow([student['id'], student['major'], student['first_name'], student['last_name'], student['gpa'], student['graduation_date'], student['disciplined']])
 
 
-# functino to sort students by major and create csv files for each
+# function to sort students by major and create csv files for each
 def list_majors(students):
     majors = {}
     for student in students:
@@ -127,7 +127,7 @@ try:
 
     disciplined_students()
 
-    print('Yay! All files created successfully!')
+    print('Yay! All files were created successfully!')
 
 except:
     print('Oh no! An error has occurred')
