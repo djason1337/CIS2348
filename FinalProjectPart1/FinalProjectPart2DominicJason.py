@@ -141,7 +141,7 @@ def query_student(major_query, gpa_query):
         closest_gpa_diff = float('inf')
         closest_student = None
         for student in students:
-            if student['major'] == major_query and not graduated(student) and student['disciplined'] != 'Y':
+            if student['major'].lower() == major_query.lower() and not graduated(student) and student['disciplined'] != 'Y':
                 gpa_diff = abs(float(student['gpa']) - gpa_query)
                 if gpa_diff < closest_gpa_diff:
                     closest_gpa_diff = gpa_diff
